@@ -13,12 +13,9 @@ const AuthRouter=require("./Routes/AuthRoutes");
 const router=require("./Routes/CarRoutes");
 
 const app=express();
-const allowedOrigins = [
-    'https://react-carbuy-9sylun1vs-satyam-chauhans-projects.vercel.app'// Development frontend
-];
 
 app.use(cors({
-    origin: allowedOrigins,
+    origin: '*',
     credentials: true, // ✅ Allow cookies and authentication headers
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
