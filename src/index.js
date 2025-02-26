@@ -18,8 +18,11 @@ const allowedOrigins = [
 ];
 
 app.use(cors({
-     origin: allowedOrigins, // ✅ Allow frontend origin
-      credentials: true,                // ✅ Allow cookies
+    origin: allowedOrigins,
+    credentials: true, // ✅ Allow cookies and authentication headers
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+    exposedHeaders: ['Set-Cookie'] // ✅ Expose 'Set-Cookie' header if needed // ✅ Allow cookies
   }));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
