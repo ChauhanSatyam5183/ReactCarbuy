@@ -15,12 +15,15 @@ const router=require("./Routes/CarRoutes");
 const app=express();
 
 app.use(cors({
-    origin: '*',
-    credentials: true, // ✅ Allow cookies and authentication headers
+    origin: 'https://react-carbuy-f.vercel.app',
+    credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-    exposedHeaders: ['Set-Cookie'] // ✅ Expose 'Set-Cookie' header if needed // ✅ Allow cookies
-  }));
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+// Enable preflight requests for all routes
+app.options('*', cors());
+
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser()); 
