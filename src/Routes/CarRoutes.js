@@ -14,6 +14,6 @@ router.get("/:id",isloggedin, CarController.getCarById);
 
 
 
-router.get("/filter/jk",CarController.filterfind)
+router.get("/filter/jk",isloggedin,CarController.filterfind);
 
 module.exports = router;
