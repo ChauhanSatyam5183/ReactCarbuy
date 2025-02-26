@@ -13,8 +13,14 @@ const AuthRouter=require("./Routes/AuthRoutes");
 const router=require("./Routes/CarRoutes");
 
 const app=express();
+const allowedOrigins = [
+    'https://react-carbuy-f.vercel.app', // Deployed frontend
+    'https://reactcarbuy-backend.onrender.com/user',
+     'https://reactcarbuy-backend.onrender.com/login'// Development frontend
+];
+
 app.use(cors({
-      origin: "https://react-carbuy-f.vercel.app",  // ✅ Allow frontend origin
+     origin: allowedOrigins, // ✅ Allow frontend origin
       credentials: true,                // ✅ Allow cookies
   }));
 app.use(express.json());
