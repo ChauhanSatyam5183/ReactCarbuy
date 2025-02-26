@@ -14,7 +14,7 @@ const router=require("./Routes/CarRoutes");
 
 const app=express();
 app.use(cors({
-      origin: "http://localhost:5173",  // ✅ Allow frontend origin
+      origin: "https://react-carbuy-f.vercel.app",  // ✅ Allow frontend origin
       credentials: true,                // ✅ Allow cookies
   }));
 app.use(express.json());
