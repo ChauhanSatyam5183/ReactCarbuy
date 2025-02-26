@@ -14,9 +14,7 @@ const router=require("./Routes/CarRoutes");
 
 const app=express();
 const allowedOrigins = [
-    'https://react-carbuy-f.vercel.app', // Deployed frontend
-    'https://reactcarbuy-backend.onrender.com/user',
-     'https://reactcarbuy-backend.onrender.com/login'// Development frontend
+    'https://react-carbuy-9sylun1vs-satyam-chauhans-projects.vercel.app'// Development frontend
 ];
 
 app.use(cors({
